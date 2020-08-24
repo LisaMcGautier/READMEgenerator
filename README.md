@@ -58,6 +58,7 @@ You can find more of my work at [GITHUBrepo](https://github.com/lisamcgautier/)
 ### Screenshots:
 
 ![Screenshot (42)](https://user-images.githubusercontent.com/62854999/91076574-b4c51680-e60d-11ea-9947-82e2ede9cffd.png)
+![Screenshot (50)](https://user-images.githubusercontent.com/62854999/91077951-e808a500-e60f-11ea-8117-797ee4cba92f.png)
 
 ### Sample README:
 
