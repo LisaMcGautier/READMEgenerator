@@ -85,14 +85,14 @@ inquirer.prompt([
 ])
 .then(function (response) {
     console.log("Info saved");
-    writeToFile(response);
-    // fs.writeFile("./README.md", JSON.stringify(response), function(error) {
-    //     if(error) {
-    //         console.log("Error: ", error);
-    //     } else {
-    //         console.log("Generating README...");
-    //     }
-    // })    
+
+    fs.writeFile("./README.md", JSON.stringify(response), function(error) {
+        if(error) {
+            console.log("Error: ", error);
+        } else {
+            console.log("Generating README...");
+        }
+    })    
 });
     
 
@@ -103,6 +103,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(data) {
+    
 
 }
 

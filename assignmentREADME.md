@@ -107,3 +107,17 @@ You are required to submit the following:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
+8/21
+
+Watched the instructor demonstration to create the list of questions in a txt document.
+
+Created exampleREADME.md from instructor demonstration to understand format of assignment objective.
+
+Used inquirer.prompt method to generate questions in the CLI and collect user input.
+
+Created userinfo.txt using JSON.stringify to store user input.
+
+8/23
+
+
+
