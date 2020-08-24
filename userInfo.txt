@@ -1,0 +1,1 @@
+{"title":"my project","description":"I made a thing that does a thing.","license":"MIT","install":"npm install","testing":"npm test","usingRepo":"Nothing special.","contributeRepo":"Not accepting contributions at this time.","email":"myname@email.com","username":"mygithub"}
