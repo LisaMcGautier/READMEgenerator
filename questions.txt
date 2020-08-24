@@ -1,0 +1,20 @@
+What is your github username? input
+What is your email address? input
+What is the title of your project? input
+Enter a short description of your project. {Some project for testing.} input
+
+What kind of license should your project have? (Checklist - Use arrow keys) list
+    MIT
+    APACHE 2.0
+    GPL 3.0
+    BSD 3
+    none
+
+What command should be run to install dependencies? (npm i) default?
+What command should be run to run tests? (npm test) default?
+
+What does the user need to know about using the repo? {Nothing, it is just for testing.} input
+What does the user need to know about contributing to the repo? {No one can contribute.} input
+
+...Generating README...
+
