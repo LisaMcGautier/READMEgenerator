@@ -119,5 +119,9 @@ Created userinfo.txt using JSON.stringify to store user input.
 
 8/23
 
+Moved inquirer prompt questions to const questions array.
 
+Created function `appendToFile` in order to save user input to README.md as input is added.
+
+README.md not rendering in the correct order; perhaps an issue with asynchronous JavaScript.
 

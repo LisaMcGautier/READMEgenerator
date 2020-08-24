@@ -14,7 +14,10 @@ const fs = require("fs");
 //   * Tests
 //   * Questions
 
-inquirer.prompt([
+
+
+// array of questions for user
+const questions = [
     {
         type: "input",
         message: "What is the title of your project?",
@@ -82,30 +85,72 @@ inquirer.prompt([
         default: "TEST"
     }
 
-])
-.then(function (response) {
-    console.log("Info saved");
-
-    fs.writeFile("./README.md", JSON.stringify(response), function(error) {
-        if(error) {
-            console.log("Error: ", error);
-        } else {
-            console.log("Generating README...");
-        }
-    })    
-});
-    
-
-
-// array of questions for user
-const questions = [
-]
+];
 
 // function to write README file
-function writeToFile(data) {
-    
 
-}
+inquirer.prompt(questions)
+    .then(function (response) {
+        console.log("Info saved");
+        writeToFile(response);
+        // fs.writeFile("./README.md", JSON.stringify(response), function(error) {
+        //     if(error) {
+        //         console.log("Error: ", error);
+        //     } else {
+        //         console.log("Generating README...");
+        //     }
+        // })    
+    });
+
+function appendToFile(fileName, readmeText, questionName) {
+    fs.appendFile(fileName, readmeText, function (error) {
+        if (error) {
+            console.log("Error: ", error);
+        } else {
+            console.log(questionName + " Saved successfully");
+        }
+    });
+
+}   
+
+
+function writeToFile(data) {
+    let fileName = "./README.md";
+
+    appendToFile(fileName, `# ${data.title} \n`, data.title);
+
+    if (data.license == "MIT") {
+        appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) \n`, data.license);
+
+    } else if(data.license == "APACHE 2.0") {
+        appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg) \n`, data.license);
+
+    } else if(data.license == "GPL 3.0") {
+        appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg) \n`, data.license);
+
+    } else if(data.license == "BSD 3") {
+        appendToFile(fileName, `![GitHub license](https://https://img.shields.io/badge/license-BSD-green.svg) \n`, data.license);
+
+    } else {
+        appendToFile(fileName, `No license selected \n`, data.license);
+    }
+
+    appendToFile(fileName, `## Description \n`, data.description);
+    appendToFile(fileName, `${data.description} \n`, data.description);
+
+    appendToFile(fileName, `## Table of Contents \n`, "");
+
+    appendToFile(fileName, `* [Installation](#installation) \n`, "");
+    appendToFile(fileName, `* [Usage](#usage) \n`, "");
+    appendToFile(fileName, `* [License](#license) \n`, "");
+    appendToFile(fileName, `* [Contributing](#contributing) \n`, "");
+    appendToFile(fileName, `* [Tests](#tests) \n`, "");
+    appendToFile(fileName, `* [Questions](#questions) \n`, "");
+
+
+
+};
+
 
 // function to initialize program
 function init() {
