@@ -113,44 +113,126 @@ function appendToFile(fileName, readmeText, questionName) {
 
 }   
 
-
 function writeToFile(data) {
     let fileName = "./README.md";
 
-    appendToFile(fileName, `# ${data.title} \n`, data.title);
-
+    // create a new variable to hold the right licensing URL image
+    let licenseIMG;
+    // if statements blocks
     if (data.license == "MIT") {
-        appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) \n`, data.license);
+        licenseIMG = `![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)`;
 
-    } else if(data.license == "APACHE 2.0") {
-        appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg) \n`, data.license);
+    } else if (data.license == "APACHE 2.0") {
+        licenseIMG = `![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)`;
 
-    } else if(data.license == "GPL 3.0") {
-        appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg) \n`, data.license);
+    } else if (data.license == "GPL 3.0") {
+        licenseIMG = `![GitHub license](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg)`;
 
-    } else if(data.license == "BSD 3") {
-        appendToFile(fileName, `![GitHub license](https://https://img.shields.io/badge/license-BSD-green.svg) \n`, data.license);
+    } else if (data.license == "BSD 3") {
+        licenseIMG = `![GitHub license](https://https://img.shields.io/badge/license-BSD-green.svg)`;
 
     } else {
-        appendToFile(fileName, `No license selected \n`, data.license);
+        licenseIMG = `No license selected`;
     }
 
-    appendToFile(fileName, `## Description \n`, data.description);
-    appendToFile(fileName, `${data.description} \n`, data.description);
+    let readmeContents = `# ${data.title}
+${licenseIMG}
 
-    appendToFile(fileName, `## Table of Contents \n`, "");
+## Description
 
-    appendToFile(fileName, `* [Installation](#installation) \n`, "");
-    appendToFile(fileName, `* [Usage](#usage) \n`, "");
-    appendToFile(fileName, `* [License](#license) \n`, "");
-    appendToFile(fileName, `* [Contributing](#contributing) \n`, "");
-    appendToFile(fileName, `* [Tests](#tests) \n`, "");
-    appendToFile(fileName, `* [Questions](#questions) \n`, "");
+${data.description}
+
+## Table of Contents
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+\`\`\`
+${data.installation}
+\`\`\`
+
+## Usage
+
+${data.usage}
+
+## License
+
+This project is licensed under the ${data.license} license.
+
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+To run tests, run the following command:
+
+\`\`\`
+${data.tests}
+\`\`\`
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at ${data.email}
+
+You can find more of my work at [GITHUBrepo](https://github.com/${data.username})`
 
 
 
-};
+    appendToFile(fileName, readmeContents, data.title);
+}
 
+
+// function writeToFile(data) {
+//     let fileName = "./README.md";
+
+//     appendToFile(fileName, `# ${data.title} \n`, data.title);
+
+//     if (data.license == "MIT") {
+//         appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) \n`, data.license);
+
+//     } else if(data.license == "APACHE 2.0") {
+//         appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg) \n`, data.license);
+
+//     } else if(data.license == "GPL 3.0") {
+//         appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg) \n`, data.license);
+
+//     } else if(data.license == "BSD 3") {
+//         appendToFile(fileName, `![GitHub license](https://https://img.shields.io/badge/license-BSD-green.svg) \n`, data.license);
+
+//     } else {
+//         appendToFile(fileName, `No license selected \n`, data.license);
+//     }
+
+//     appendToFile(fileName, `## Description \n`, data.description);
+//     appendToFile(fileName, `${data.description} \n`, data.description);
+
+//     appendToFile(fileName, `## Table of Contents \n`, "");
+
+//     appendToFile(fileName, `* [Installation](#installation) \n`, "");
+//     appendToFile(fileName, `* [Usage](#usage) \n`, "");
+//     appendToFile(fileName, `* [License](#license) \n`, "");
+//     appendToFile(fileName, `* [Contributing](#contributing) \n`, "");
+//     appendToFile(fileName, `* [Tests](#tests) \n`, "");
+//     appendToFile(fileName, `* [Questions](#questions) \n`, "");
+
+
+
+// };
 
 // function to initialize program
 function init() {
@@ -159,3 +241,14 @@ function init() {
 
 // function call to initialize program
 init();
+
+
+// title = ${data.title};
+// description = ${data.description};
+// license = ${data.license};
+// install = ${data.install};
+// testing = ${data.testing};
+// usingRepo = ${data.usingRepo};
+// contributeRepo = ${data.contributeRepo};
+// email = ${data.email};
+// username = ${data.username}
