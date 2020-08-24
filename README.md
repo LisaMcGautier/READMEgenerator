@@ -57,12 +57,9 @@ You can find more of my work at [GITHUBrepo](https://github.com/lisamcgautier/)
 
 ### Screenshots:
 
-![Screenshot (39)](https://user-images.githubusercontent.com/62854999/91076528-a840be00-e60d-11ea-8746-0e9d7ebc9f3b.png)
-![Screenshot (40)](https://user-images.githubusercontent.com/62854999/91076542-ac6cdb80-e60d-11ea-9fb5-08aacc795c50.png)
-![Screenshot (41)](https://user-images.githubusercontent.com/62854999/91076556-af67cc00-e60d-11ea-8b7b-88c011f1f494.png)
 ![Screenshot (42)](https://user-images.githubusercontent.com/62854999/91076574-b4c51680-e60d-11ea-9947-82e2ede9cffd.png)
 
-### Sample Repository:
+### Sample README:
 
 # Necesito Cafecito
 ![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)
