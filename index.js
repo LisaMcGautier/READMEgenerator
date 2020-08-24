@@ -14,22 +14,18 @@ const fs = require("fs");
 //   * Tests
 //   * Questions
 
-
-
 // array of questions for user
 const questions = [
     {
         type: "input",
         message: "What is the title of your project?",
         name: "title",
-        default: "TEST"
     },
 
     {
         type: "input",
         message: "Enter a short description of your project.",
         name: "description",
-        default: "TEST"
     },
 
     {
@@ -63,26 +59,23 @@ const questions = [
         type: "input",
         message: "What does the user need to know about using the repo?",
         name: "usage",
-        default: "TEST"
     },
     {
         type: "input",
         message: "What does the user need to know about contributing to the repo?",
         name: "contributing",
-        default: "TEST"
     },
 
     {
         type: "input",
         message: "What is your email address?",
         name: "email",
-        default: "TEST"
     },
     {
         type: "input",
         message: "What is your github username?",
         name: "username",
-        default: "TEST"
+        default: "lisamcgautier"
     }
 
 ];
@@ -92,14 +85,7 @@ const questions = [
 inquirer.prompt(questions)
     .then(function (response) {
         console.log("Info saved");
-        writeToFile(response);
-        // fs.writeFile("./README.md", JSON.stringify(response), function(error) {
-        //     if(error) {
-        //         console.log("Error: ", error);
-        //     } else {
-        //         console.log("Generating README...");
-        //     }
-        // })    
+        writeToFile(response); 
     });
 
 function appendToFile(fileName, readmeText, questionName) {
@@ -114,7 +100,7 @@ function appendToFile(fileName, readmeText, questionName) {
 }   
 
 function writeToFile(data) {
-    let fileName = "./README.md";
+    const fileName = "./README.md";
 
     // create a new variable to hold the right licensing URL image
     let licenseIMG;
@@ -135,6 +121,7 @@ function writeToFile(data) {
         licenseIMG = `No license selected`;
     }
 
+    // README template to hold the formatting of the file; template literals to hold the values entered by the user
     let readmeContents = `# ${data.title}
 ${licenseIMG}
 
@@ -196,43 +183,6 @@ You can find more of my work at [GITHUBrepo](https://github.com/${data.username}
     appendToFile(fileName, readmeContents, data.title);
 }
 
-
-// function writeToFile(data) {
-//     let fileName = "./README.md";
-
-//     appendToFile(fileName, `# ${data.title} \n`, data.title);
-
-//     if (data.license == "MIT") {
-//         appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) \n`, data.license);
-
-//     } else if(data.license == "APACHE 2.0") {
-//         appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg) \n`, data.license);
-
-//     } else if(data.license == "GPL 3.0") {
-//         appendToFile(fileName, `![GitHub license](https://img.shields.io/badge/license-GPL%20(%3E%3D%202)-blue.svg) \n`, data.license);
-
-//     } else if(data.license == "BSD 3") {
-//         appendToFile(fileName, `![GitHub license](https://https://img.shields.io/badge/license-BSD-green.svg) \n`, data.license);
-
-//     } else {
-//         appendToFile(fileName, `No license selected \n`, data.license);
-//     }
-
-//     appendToFile(fileName, `## Description \n`, data.description);
-//     appendToFile(fileName, `${data.description} \n`, data.description);
-
-//     appendToFile(fileName, `## Table of Contents \n`, "");
-
-//     appendToFile(fileName, `* [Installation](#installation) \n`, "");
-//     appendToFile(fileName, `* [Usage](#usage) \n`, "");
-//     appendToFile(fileName, `* [License](#license) \n`, "");
-//     appendToFile(fileName, `* [Contributing](#contributing) \n`, "");
-//     appendToFile(fileName, `* [Tests](#tests) \n`, "");
-//     appendToFile(fileName, `* [Questions](#questions) \n`, "");
-
-
-
-// };
 
 // function to initialize program
 function init() {
