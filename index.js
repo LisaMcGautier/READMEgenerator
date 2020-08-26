@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const { getMaxListeners } = require("process");
 // const generateMarkdown = require("./generateMarkdown");
 
 // * The generated README includes the following sections: 
@@ -21,13 +22,11 @@ const questions = [
         message: "What is the title of your project?",
         name: "title",
     },
-
     {
         type: "input",
         message: "Enter a short description of your project.",
         name: "description",
     },
-
     {
         type: "list",
         message: "What kind of license should your project have?",
@@ -40,21 +39,18 @@ const questions = [
             "BSD 3"
         ]
     },
-
     {
         type: "input",
         message: "What command should be run to install dependencies?",
         name: "installation",
         default: "npm install"
     },
-
     {
         type: "input",
         message: "What command should be run to run tests?",
         name: "tests",
         default: "npm test"
     },
-
     {
         type: "input",
         message: "What does the user need to know about using the repo?",
@@ -65,11 +61,11 @@ const questions = [
         message: "What does the user need to know about contributing to the repo?",
         name: "contributing",
     },
-
     {
         type: "input",
         message: "What is your email address?",
         name: "email",
+        default: "dlanodcm4517@gmail.com"
     },
     {
         type: "input",
@@ -77,26 +73,23 @@ const questions = [
         name: "username",
         default: "lisamcgautier"
     }
-
 ];
 
 // function to write README file
 
 inquirer.prompt(questions)
     .then(function (response) {
-        console.log("Info saved");
         writeToFile(response); 
     });
 
-function appendToFile(fileName, readmeText, questionName) {
+function appendToFile(fileName, readmeText) {
     fs.appendFile(fileName, readmeText, function (error) {
         if (error) {
             console.log("Error: ", error);
         } else {
-            console.log(questionName + " Saved successfully");
+            console.log("README generated successfully!");
         }
     });
-
 }   
 
 function writeToFile(data) {
@@ -178,9 +171,9 @@ If you have any questions about the repo, open an issue or contact me directly a
 
 You can find more of my work at [GITHUBrepo](https://github.com/${data.username})`
 
+    console.log("Generating README...");
 
-
-    appendToFile(fileName, readmeContents, data.title);
+    appendToFile(fileName, readmeContents);
 }
 
 

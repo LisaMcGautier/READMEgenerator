@@ -133,5 +133,9 @@ Added screenshots and a sample README to `README.md` in README Generator repo.
 
 Edited `index.js` to remove some default values.
 
+8/26
 
+Performed minor edits of unused code.
+
+Created Screencastify video demo of app functionality.
 
