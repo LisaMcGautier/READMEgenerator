@@ -118,4 +118,7 @@ If you have any questions about the repo, open an issue or contact me directly a
 
 You can find more of my work at [GITHUBrepo](https://github.com/TEST)
 
+https://lisamcgautier.github.io/READMEgenerator/
+https://github.com/LisaMcGautier/READMEgenerator
+
 Screencastify README Generator DEMO video:  https://drive.google.com/file/d/1CAjzcX4gK6y--u5ih1I9_7uCiniLgEL3/view
