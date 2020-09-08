@@ -41,6 +41,11 @@ const questions = [
     },
     {
         type: "input",
+        message: "Which technologies were used to build this project?",
+        name: "technologies",
+    },
+    {
+        type: "input",
         message: "What command should be run to install dependencies?",
         name: "installation",
         default: "npm install"
@@ -124,6 +129,8 @@ ${data.description}
 
 ## Table of Contents
 
+* [Technologies](#technologies)
+
 * [Installation](#installation)
 
 * [Usage](#usage)
@@ -136,6 +143,14 @@ ${data.description}
 
 * [Questions](#questions)
 
+
+## Technologies
+
+The following technologies were used to create this project:
+
+\`\`\`
+${data.technologies}
+\`\`\`
 
 ## Installation
 
